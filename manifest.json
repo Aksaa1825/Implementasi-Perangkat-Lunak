@@ -1,0 +1,36 @@
+{
+  "name": "LaporWarga",
+  "short_name": "LaporWarga",
+  "description": "Platform pelaporan masyarakat digital untuk menyampaikan pengaduan dan laporan kepada pemerintah daerah secara cepat dan transparan.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a1612",
+  "theme_color": "#22c55e",
+  "orientation": "portrait-primary",
+  "lang": "id",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["government", "productivity", "utilities"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Buat Laporan",
+      "short_name": "Laporan",
+      "description": "Buat laporan baru dengan cepat",
+      "url": "/?page=buat-laporan",
+      "icons": [{ "src": "icons/icon-96.png", "sizes": "96x96" }]
+    }
+  ]
+}

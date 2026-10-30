@@ -1,0 +1,91 @@
+================================================================
+  LaporWarga — Panduan Deployment ke Hostinger / cPanel
+================================================================
+
+STRUKTUR FILE YANG PERLU DI-UPLOAD:
+-------------------------------------
+laporan-warga/
+├── index.html           ← File utama SPA
+├── .htaccess            ← Konfigurasi Apache (cPanel)
+├── manifest.json        ← PWA Manifest
+├── favicon.svg          ← Favicon
+├── robots.txt           ← SEO robots
+├── css/
+│   └── style.css
+├── js/
+│   ├── app.js
+│   ├── data.js
+│   └── pages/
+│       ├── dashboard.js
+│       ├── laporan.js
+│       ├── peta.js
+│       ├── admin.js
+│       ├── opd.js
+│       ├── statistik.js
+│       ├── profil.js
+│       └── survei.js
+└── icons/               ← (opsional, untuk PWA icon)
+    ├── icon-192.png
+    ├── icon-512.png
+    └── apple-touch-icon.png
+
+================================================================
+CARA UPLOAD KE HOSTINGER / cPanel:
+================================================================
+
+METODE 1 — File Manager cPanel:
+1. Login ke cPanel Hostinger
+2. Buka "File Manager"
+3. Navigasi ke folder "public_html"
+4. Klik "Upload" lalu pilih semua file
+   ATAU: Upload sebagai .zip lalu Extract di sana
+5. Pastikan .htaccess ikut ter-upload (file tersembunyi)
+6. Cek "Show Hidden Files" di File Manager agar .htaccess terlihat
+
+METODE 2 — FTP (FileZilla):
+1. Buka FileZilla
+2. Masukkan Host, Username, Password, Port dari Hostinger
+3. Upload semua file ke /public_html/
+4. Aktifkan "Show hidden files" di FileZilla agar .htaccess ikut
+
+================================================================
+SETTING DOMAIN:
+================================================================
+- Jika di root domain: upload ke /public_html/
+- Jika di subdomain (misal: app.domain.com):
+  a. Buat subdomain di cPanel → Domains → Subdomains
+  b. Upload ke folder subdomain yang dibuat
+  c. Update .htaccess: ganti /index.html dengan path yang benar
+
+================================================================
+AKTIFKAN SSL (HTTPS):
+================================================================
+1. Di cPanel Hostinger → SSL/TLS
+2. Aktifkan "Force HTTPS Redirect"
+   ATAU buka .htaccess dan uncomment baris:
+   # RewriteCond %{HTTPS} off
+   # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+================================================================
+CATATAN PENTING:
+================================================================
+- Aplikasi ini adalah FRONTEND ONLY (tidak perlu PHP/database)
+- Data menggunakan simulasi (mock data) di JavaScript
+- File .htaccess HARUS ter-upload (cek "show hidden files")
+- Jika .htaccess tidak berfungsi, pastikan cPanel mengaktifkan
+  mod_rewrite (biasanya sudah aktif di Hostinger)
+
+================================================================
+AKUN DEMO LOGIN:
+================================================================
+Email: budi@email.com        | Password: 12345678 | Role: Warga
+Email: admin@diskominfo.go.id| Password: 12345678 | Role: Admin
+Email: petugas@dlh.go.id     | Password: 12345678 | Role: OPD
+Email: pimpinan@bogor.go.id  | Password: 12345678 | Role: Pimpinan
+
+Atau gunakan tombol Quick Login di halaman Login.
+
+================================================================
+DIBUAT DENGAN: HTML + CSS + Vanilla JavaScript
+VERSI: 1.0.0 — Oktober 2024
+================================================================

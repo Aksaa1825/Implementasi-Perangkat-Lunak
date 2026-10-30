@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Apply saved theme BEFORE paint to prevent flash -->
+  <script>(function(){const t=localStorage.getItem('lw_theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');})()</script>
+  <title>LaporWarga — Sistem Pelaporan Masyarakat</title>
+  <meta name="description" content="Platform pelaporan masyarakat digital untuk menyampaikan pengaduan dan laporan kepada pemerintah daerah secara cepat dan transparan." />
+  <meta name="keywords" content="laporan warga, pengaduan masyarakat, e-government, pemerintah daerah, pelaporan online" />
+  <meta name="author" content="LaporWarga" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- PWA & Theme -->
+  <meta name="theme-color" content="#22c55e" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="LaporWarga" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="LaporWarga — Sistem Pelaporan Masyarakat" />
+  <meta property="og:description" content="Platform pelaporan masyarakat digital untuk menyampaikan pengaduan dan laporan kepada pemerintah daerah secara cepat dan transparan." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="icons/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="LaporWarga — Sistem Pelaporan Masyarakat" />
+  <meta name="twitter:description" content="Platform pelaporan masyarakat digital untuk menyampaikan pengaduan dan laporan kepada pemerintah daerah secara cepat dan transparan." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Splash / Loading -->
+    <div id="splash-screen">
+      <div class="splash-inner">
+        <div class="splash-logo">
+          <div class="logo-icon">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <rect width="48" height="48" rx="14" fill="url(#logoGrad)"/>
+              <path d="M24 10C17.925 10 13 14.925 13 21C13 27.075 24 40 24 40C24 40 35 27.075 35 21C35 14.925 30.075 10 24 10Z" fill="white" opacity="0.92"/>
+              <circle cx="24" cy="21" r="5" fill="url(#logoGrad)"/>
+              <circle cx="24" cy="21" r="2.5" fill="white" opacity="0.8"/>
+              <defs>
+                <linearGradient id="logoGrad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#7C3AED"/>
+                  <stop offset="1" stop-color="#06B6D4"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <span class="splash-title">LaporWarga</span>
+        </div>
+        <div class="splash-tagline">Sistem Pelaporan Masyarakat Digital</div>
+        <div class="splash-spinner"></div>
+      </div>
+    </div>
+
+    <!-- Auth Pages -->
+    <div id="page-auth" class="page hidden">
+      <div class="auth-container">
+        <div class="auth-left">
+          <div class="auth-bg-art">
+            <div class="auth-orb auth-orb-1"></div>
+            <div class="auth-orb auth-orb-2"></div>
+            <div class="auth-orb auth-orb-3"></div>
+          </div>
+          <div class="auth-left-content">
+            <div class="auth-brand">
+              <div class="brand-icon">
+                <svg width="36" height="36" viewBox="0 0 48 48" fill="none">
+                  <rect width="48" height="48" rx="14" fill="rgba(255,255,255,0.15)"/>
+                  <path d="M24 10C17.925 10 13 14.925 13 21C13 27.075 24 40 24 40C24 40 35 27.075 35 21C35 14.925 30.075 10 24 10Z" fill="white" opacity="0.92"/>
+                  <circle cx="24" cy="21" r="5" fill="#7C3AED"/>
+                  <circle cx="24" cy="21" r="2.5" fill="white" opacity="0.8"/>
+                </svg>
+              </div>
+              <span>LaporWarga</span>
+            </div>
+            <h2>Platform Pelaporan <span>Masyarakat Digital</span></h2>
+            <p>Sampaikan pengaduan Anda dengan mudah, pantau progres secara real-time, dan dapatkan respons cepat dari pemerintah daerah.</p>
+            <div class="auth-features">
+              <div class="auth-feature-item">
+                <div class="feature-icon">📍</div>
+                <span>Laporan berbasis lokasi GPS</span>
+              </div>
+              <div class="auth-feature-item">
+                <div class="feature-icon">🔔</div>
+                <span>Notifikasi status real-time</span>
+              </div>
+              <div class="auth-feature-item">
+                <div class="feature-icon">🗺️</div>
+                <span>Peta sebaran laporan interaktif</span>
+              </div>
+              <div class="auth-feature-item">
+                <div class="feature-icon">🔐</div>
+                <span>Data aman &amp; terenkripsi</span>
+              </div>
+            </div>
+            <div class="auth-stats">
+              <div class="auth-stat">
+                <div class="auth-stat-val">2.4K+</div>
+                <div class="auth-stat-label">Laporan Masuk</div>
+              </div>
+              <div class="auth-stat">
+                <div class="auth-stat-val">92%</div>
+                <div class="auth-stat-label">Terselesaikan</div>
+              </div>
+              <div class="auth-stat">
+                <div class="auth-stat-val">48h</div>
+                <div class="auth-stat-label">Rata-rata Respons</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="auth-right">
+          <!-- Login Form -->
+          <div id="form-login" class="auth-form">
+            <h1>Masuk ke Akun</h1>
+            <p class="auth-subtitle">Belum punya akun? <a href="#" id="goto-register">Daftar sekarang</a></p>
+            <div class="form-group">
+              <label for="login-email">Email</label>
+              <input type="email" id="login-email" placeholder="email@contoh.com" />
+            </div>
+            <div class="form-group">
+              <label for="login-password">Password</label>
+              <div class="input-password-wrap">
+                <input type="password" id="login-password" placeholder="••••••••" />
+                <button class="toggle-pw" onclick="togglePassword('login-password', this)">👁</button>
+              </div>
+            </div>
+            <div class="form-row-between">
+              <label class="checkbox-label"><input type="checkbox" /> Ingat saya</label>
+              <a href="#" class="link-muted">Lupa password?</a>
+            </div>
+            <button class="btn-primary btn-full" id="btn-login" onclick="handleLogin()">Masuk</button>
+            <div class="auth-divider"><span>atau masuk sebagai</span></div>
+            <div class="demo-logins">
+              <button class="demo-btn" onclick="loginAs('warga')"><span>👤 Warga</span></button>
+              <button class="demo-btn" onclick="loginAs('admin')"><span>🛡️ Admin</span></button>
+              <button class="demo-btn" onclick="loginAs('opd')"><span>🏢 Petugas OPD</span></button>
+              <button class="demo-btn" onclick="loginAs('pimpinan')"><span>👔 Pimpinan</span></button>
+            </div>
+          </div>
+          <!-- Register Form -->
+          <div id="form-register" class="auth-form hidden">
+            <h1>Daftar Akun</h1>
+            <p class="auth-subtitle">Sudah punya akun? <a href="#" id="goto-login">Masuk sekarang</a></p>
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="reg-nama">Nama Lengkap</label>
+                <input type="text" id="reg-nama" placeholder="John Doe" />
+              </div>
+              <div class="form-group">
+                <label for="reg-nik">NIK</label>
+                <input type="text" id="reg-nik" placeholder="3201..." maxlength="16" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="reg-email">Email</label>
+              <input type="email" id="reg-email" placeholder="email@contoh.com" />
+            </div>
+            <div class="form-group">
+              <label for="reg-phone">No. Telepon</label>
+              <input type="tel" id="reg-phone" placeholder="08xx..." />
+            </div>
+            <div class="form-group">
+              <label for="reg-alamat">Alamat</label>
+              <input type="text" id="reg-alamat" placeholder="Jl. Contoh No. 1, Kecamatan..." />
+            </div>
+            <div class="form-group">
+              <label for="reg-password">Password</label>
+              <input type="password" id="reg-password" placeholder="Min. 8 karakter" />
+            </div>
+            <button class="btn-primary btn-full" onclick="handleRegister()">Daftar Sekarang</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main App Shell -->
+    <div id="app-shell" class="hidden">
+      <!-- Sidebar -->
+      <aside id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+          <div class="sidebar-brand">
+            <div class="brand-icon-sm">
+              <svg width="28" height="28" viewBox="0 0 48 48" fill="none">
+                <rect width="48" height="48" rx="14" fill="url(#sg)"/>
+                <path d="M24 10C17.925 10 13 14.925 13 21C13 27.075 24 40 24 40C24 40 35 27.075 35 21C35 14.925 30.075 10 24 10Z" fill="white" opacity="0.92"/>
+                <circle cx="24" cy="21" r="5" fill="url(#sg)"/>
+                <circle cx="24" cy="21" r="2.5" fill="white" opacity="0.8"/>
+                <defs><linearGradient id="sg" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#7C3AED"/><stop offset="1" stop-color="#06B6D4"/></linearGradient></defs>
+              </svg>
+            </div>
+            <div>
+              <div class="brand-name">LaporWarga</div>
+              <div class="brand-sub">Sistem Pelaporan Digital</div>
+            </div>
+          </div>
+          <button class="sidebar-toggle" id="sidebar-toggle" onclick="toggleSidebar()">☰</button>
+        </div>
+
+        <div class="sidebar-user">
+          <div class="user-avatar" id="sidebar-avatar">W</div>
+          <div class="user-info">
+            <div class="user-name" id="sidebar-username">Warga</div>
+            <div class="user-role-badge" id="sidebar-role-badge">Warga</div>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav" id="sidebar-nav">
+          <!-- Nav items injected by JS based on role -->
+        </nav>
+
+        <div class="sidebar-footer">
+          <button class="btn-logout" onclick="handleLogout()">
+            <span>🚪</span> Keluar
+          </button>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content" id="main-content">
+        <!-- Top Bar -->
+        <header class="topbar">
+          <div class="topbar-left">
+            <button class="topbar-menu-btn" onclick="toggleSidebar()">☰</button>
+            <div class="topbar-breadcrumb" id="topbar-breadcrumb">Dashboard</div>
+          </div>
+          <div class="topbar-right">
+            <!-- Theme Toggle Button -->
+            <button class="theme-toggle-btn" id="theme-toggle-btn" onclick="toggleTheme()" title="Ganti Tema" aria-label="Toggle dark/light mode">
+              <span class="theme-toggle-track">
+                <span class="theme-toggle-thumb"></span>
+              </span>
+              <span class="theme-toggle-icon" id="theme-toggle-icon">🌙</span>
+            </button>
+            <button class="topbar-notif-btn" id="notif-btn" onclick="toggleNotifPanel()">
+              🔔
+              <span class="notif-badge" id="notif-badge">3</span>
+            </button>
+            <div class="topbar-user" onclick="goToProfile()">
+              <div class="topbar-avatar" id="topbar-avatar">W</div>
+              <span id="topbar-username">Warga</span>
+            </div>
+          </div>
+        </header>
+
+        <!-- Notification Panel -->
+        <div class="notif-panel hidden" id="notif-panel">
+          <div class="notif-panel-header">
+            <h3>Notifikasi</h3>
+            <button onclick="markAllRead()">Tandai semua dibaca</button>
+          </div>
+          <div class="notif-list" id="notif-list"></div>
+        </div>
+
+        <!-- Pages Container -->
+        <div class="pages-container" id="pages-container">
+          <!-- Pages injected by JS -->
+        </div>
+      </main>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay hidden" id="modal-overlay" onclick="closeModal()"></div>
+    <div class="modal hidden" id="modal">
+      <div class="modal-header">
+        <h3 id="modal-title">Modal</h3>
+        <button class="modal-close" onclick="closeModal()">✕</button>
+      </div>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast-container" id="toast-container"></div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/pages/dashboard.js"></script>
+  <script src="js/pages/laporan.js"></script>
+  <script src="js/pages/peta.js"></script>
+  <script src="js/pages/admin.js"></script>
+  <script src="js/pages/opd.js"></script>
+  <script src="js/pages/statistik.js"></script>
+  <script src="js/pages/profil.js"></script>
+  <script src="js/pages/survei.js"></script>
+</body>
+</html>
